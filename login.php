@@ -1,6 +1,7 @@
 <?php
     #ABRE UMA VARIÁVEL DE SESSÃO
     session_start();
+    $nomeusuario;
 
     #SOLICITA O ARQUIVO CONECTADB
     include("conectadb.php");
@@ -15,7 +16,7 @@
         $retorno = mysqli_query($link, $sql);  #o retorno abre uma conexão de query passando o link ($servidor, $banco, $usuario, $senha)
 
         #TODO RETORNO DO BANCO É RETORNADO EM ARRAY EM PHP
-        while($tbl = myslqi_fetch_array($retorno))
+        while($tbl = mysqli_fetch_array($retorno))
         {
             $cont = $tbl[0];
         }
@@ -25,7 +26,8 @@
         #SE $CONT == 0 ELE NÃO EXISTE E O USUÁRIO NÃO ESTÁ CADASTRADO
 
         if($cont == 1){
-            $sql = "SELECT & FROM usuarios WHERE usu_nome = '$nome' and usu_senha = '$senha' AND usu_ativo = 's'"; #verifica se está ativo além de existir
+            $sql = "SELECT * FROM usuarios WHERE usu_nome = '$nome' and usu_senha = '$senha' AND usu_ativo = 's'"; #verifica se está ativo além de existir
+            $_SESSION['nomeusuario'] = $nome;
 
             #DIRECIONA USUÁRIO PARA ADM
             echo"<script>window.location.href='admhome.php';</script>";
@@ -46,9 +48,9 @@
 <body>
     <form action= "login.php" method= "post">
         <h1>LOGIN DE USUÁRIO</h1>
-        <input type="text" name="nome" placeholder="NOME">
+        <input type="text" name="nome" placeholder="NOME" required>
         <p></p>
-        <input type="password" name="senha" placeholder="SENHA">
+        <input type="password" name="senha" placeholder="SENHA" required>
         <p></p>
         <input type="submit" name="login" value="LOGIN">
     </form>

@@ -56,10 +56,9 @@ form{
 input{
   background-color: rgb(205, 191, 211);
   border-radius: 3px;
-
 }
 
-input[type="text"],
+  input[type="text"],
   input[type="password"],
   input[type="number"],
   input[type="decimal"],
@@ -95,7 +94,7 @@ h2{
 }
 h1{
 
-  color: #e0dceb;
+  color: #450953;
 }
 p{
 
