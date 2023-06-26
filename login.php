@@ -12,7 +12,7 @@
         $senha = $_POST['senha'];
 
         #QUERY DE BANCO DE DADOS
-        $sql = "SELECT COUNT(usu_id) FROM usuarios WHERE usu_nome = '$nome' AND usu_senha = '$senha'";
+        $sql = "SELECT COUNT(usu_id) FROM usuarios WHERE usu_nome = '$nome' AND usu_senha = '$senha' AND usu_ativo = 's'";
         $retorno = mysqli_query($link, $sql);  #o retorno abre uma conexão de query passando o link ($servidor, $banco, $usuario, $senha)
 
         #TODO RETORNO DO BANCO É RETORNADO EM ARRAY EM PHP

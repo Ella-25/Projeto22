@@ -11,7 +11,7 @@
     <title>MENU ADMINISTRATIVO</title>
 </head>
 <body>
-<div>
+    <div>
         <ul class="menu">
             <li><a href="cadastrausuario.php">CADASTRA USUÁRIO</a></li>
             <li><a href="listausuario.php">LISTA USUÁRIO</a></li>
