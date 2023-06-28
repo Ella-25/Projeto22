@@ -32,7 +32,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/estiloadm.css">
-    <title>LISTA USUÁRIO</title>
+    <title>LISTA CLIENTE</title>
 </head>
 <body>
 <div>
@@ -76,6 +76,11 @@
                 <tr>
                     <th>NOME</th>
                     <th>CPF</th>
+                    <th>DATA DE NASCIMENTO</th>
+                    <th>TELEFONE</th>
+                    <th>LOGRADOURO</th>
+                    <th>NÚMERO</th>
+                    <th>CIDADE</th>
                     <th>ALTERAR DADOS</th>
                     <th>ATIVO?</th>
                 </tr>
@@ -86,6 +91,11 @@
                     <tr>
                         <td><?= $tbl[2]?></td> <!-- TRAZ SOMENTE A COLUNA 2 DO BANCO [NOME] -->
                         <td><?= $tbl[1]?></td> <!-- TRAZ SOMENTE A COLUNA 1 DO BANCO [CPF] -->
+                        <td><?= $tbl[4]?></td>
+                        <td><?= $tbl[5]?></td>
+                        <td><?= $tbl[6]?></td>
+                        <td><?= $tbl[7]?></td>
+                        <td><?= $tbl[8]?></td>
                         <td><a href="alteracliente.php?id=<?=$tbl[0]?>">
                         <input type="button" value="ALTERAR DADOS"></a></td> <!-- CRIANDO UM BOTÃO ALTERAR PÁSSANDO O ID DO CLIENTE NA URL VIA GET -->
                         <td><?=$check =($tbl[9] == 's')?"SIM":"NÃO"?></td> <!-- VALIDA s OU n E ESCREVE "SIM" E "NÃO" --> 
