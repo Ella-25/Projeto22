@@ -6,104 +6,55 @@ session_start();
 
 $nomeusuario = $_SESSION['nomeusuario'];
 
-
-
-
 $sql = "SELECT * FROM produtos WHERE pro_ativo = 's'";
-
 $retorno = mysqli_query($link, $sql);
-
 $ativo = "s";
 
-
-
-
 if($_SERVER['REQUEST_METHOD']== 'POST'){
-
     $ativo= $_POST['ativo'];
-
-
-
 
     #VALIDA SE PRODUTO EXISTE
 
-
-
-
     if ($ativo == 's') {
-
         $sql = "SELECT * FROM produtos WHERE pro_ativo = 's'";
-
         $retorno = mysqli_query($link, $sql);
-
     } else {
-
         $sql = "SELECT * FROM produtos WHERE pro_ativo = 'n'";
-
         $retorno = mysqli_query($link, $sql);
-
     }
-
 }
-
-
-
-
 ?>
 
-
-
-
 <!DOCTYPE html>
-
 <html lang="pt-br">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="css/estiloadm.css">
-
-    <title>Document</title>
-
+    <title>LISTA PRODUTO</title>
 </head>
-
 <body>
 
     <!-- NOSSO MENU GLOBAL -->
 
     <ul class="menu">
-
         <li><a href="cadastrausuario.php">CADASTRA USUÁRIO</a></li>
-
             <li><a href="listausuario.php">LISTA USUÁRIO</a></li>
-
+            <li><a href="cadastraproduto.php">CADASTRA PRODUTO</a></li>
+            <li><a href="listaproduto.php">LISTA PRODUTO</a></li>
             <li><a href="cadastracliente.php">CADASTRA CLIENTE</a></li>
-
             <li><a href="listacliente.php">LISTA CLIENTE</a></li>
-
             <li class="menuloja"><a href="logout.php">SAIR</a></li>
-
             <?php
 
             #ABERTO O PHP PARA VALIDAR SE A SESSÃO DO USUARIO ESTÁ ABERTA
-
             # SE SESSÃO ABERTA, FECHA O PHP PARA USAR ELEMENTOS HTML
 
             if ($nomeusuario != null) {
-
                 ?>
-
                 <!--USO DE ELEMENTO HTML COM PHP INTERNO-->
 
-                <li class="profile">Olá
-
-                    <?= strtoupper($nomeusuario) ?>
-
-                </li>
-
+                <li class="profile">OLÁ, <?= strtoupper($nomeusuario) ?></li>
                 <?php
                 # ABERTURA DE OUTRO PHP PARA CASO FALSE
 
