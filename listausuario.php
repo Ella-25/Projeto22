@@ -51,7 +51,7 @@
                 if($nomeusuario != null){
                     ?>
                     <!-- USO DO ELEMENTO HTML COM PHP INTERNO -->
-                    <li class="profile">OLÁ, <?=strtoupper($nomeusuario)?></li>
+                    <li class="profile">Olá, <?=strtoupper($nomeusuario)?></li>
                     <?php
                     #ABERTURA DE OUTRO PHP PARA CASO FALSE
                 }

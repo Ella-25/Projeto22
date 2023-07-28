@@ -54,7 +54,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
                 ?>
                 <!--USO DE ELEMENTO HTML COM PHP INTERNO-->
 
-                <li class="profile">OLÁ, <?= strtoupper($nomeusuario) ?></li>
+                <li class="profile">Olá, <?= strtoupper($nomeusuario) ?></li>
                 <?php
                 # ABERTURA DE OUTRO PHP PARA CASO FALSE
 
