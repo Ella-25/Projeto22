@@ -2,8 +2,6 @@
 include("../conectadb.php");
 
 session_start();
-$sessao_nomecliente = $_SESSION['nomecliente'];
-$sessao_idcliente = $_SESSION['idcliente'];
 $sql = "SELECT * FROM produtos WHERE pro_ativo = 's'";
 $retorno = mysqli_query($link, $sql);
 ?>
